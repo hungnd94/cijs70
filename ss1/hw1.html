@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 1 - Creating tables</title>
+    <style>
+        table {
+            border: 1px solid black;
+            width: 100%;
+            height: 100%;
+        }
+
+        table td {
+            border: 1px solid black;
+        }
+
+        table tr {
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="myTable"></table>
+    <input type="button" onclick="makeTable(); hideButton(this)" value="Create a table">
+    <script>
+        function makeTable() {
+            let numRows = parseInt(prompt('Enter number of rows: '));
+            let numCols = parseInt(prompt('Enter number of cols: '));
+            let table = document.getElementById('myTable');
+
+            console.log(numRows);
+            console.log(numCols);
+
+            for (let index = 0; index < numRows; index++) {
+                var row = table.insertRow(0);
+                for (let i = 0; i < numCols; i++) {
+                    row.insertCell(i);
+                }
+            }
+
+        }
+
+        function hideButton(x) {
+            x.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
